@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | TG Oxygen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding-bottom: 100px;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    nav {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .dark-mode nav {
+      background-color: #1e1e1e;
+    }
+
+    nav a.navbar-brand {
+      font-weight: 700;
+      color: #007bff !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .nav-link {
+      color: #333;
+      margin: 0 6px;
+      transition: color 0.3s ease;
+      
+    }
+
+    .dark-mode nav .nav-link {
+      color: #e0e0e0;
+
+    }
+
+    nav .nav-link:hover {
+      color: #007bff;
+    }
+
+    .navbar-logo {
+      height: 60px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: url(1680.png) no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-shadow: 3px 3px 15px #fff;
+      
+    }
+
+    .hero p {
+      font-size: 1rem;
+      font-weight: 700;
+      text-shadow: 3px 3px 15px #fff;
+      
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 25px;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #007bff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 12px 14px;
+      font-size: 24px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+      background: #222;
+      color: #aaa;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #007bff;
+      margin-left: 20px;
+    }
+
+    .dark-mode .dark-toggle {
+      color: #66b3ff;
+    }
+
+    /* Full Image Modal */
+    .modal-img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 100vh;
+        background-position: center;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="TGBANNERnewcanva.png">
+        <img src="T G OXYGEN-Photoroom.png" class="navbar-logo" alt="TG Oxygen Logo" onclick="showLogoModal()">
+       <a href="stc.html"><h5>TG OXYGEN AND INDUSTRIAL GASES</h5></a> 
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="HOME.html">🌐Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Products & Services.html">🛍️Products & Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="About US.html">ℹ️About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="CONTACT.html">📞Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="For Booking.html">🛒For Booking</a></li>
+          <li class="nav-item">
+            <span class="dark-toggle" onclick="toggleDarkMode()">🌓</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <!-- <h1>Contact TG Oxygen</h1>
+      <p class="mt-2"><b><i>We're Here to Help You 24/7 With All Your Gas Needs.</i></b></p> -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-5">
+        <div class="col-md-6">
+          <h2 class="mb-4">For More Queries</h2>
+          <form action="mailto:tgoxygengas@gmail.com" method="POST" enctype="text/plain">
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name" name="name" required></div>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Your Email" name="email" required></div>
+            <div class="mb-3"><input type="tel" class="form-control" placeholder="Your Phone" name="phone"></div>
+            <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Message" name="message" required></textarea></div>
+            <div><button type="submit" class="btn btn-primary">Send Message</button></div>
+          </form>
+        </div>
+        <div class="col-md-5 offset-md-1 contact-details">
+          <h4 class="mb-3">Contact Information</h4>
+          <p><strong>📍 Address:</strong> Near Al Rose Sofa, Srinivasa Hospital, Santosh Nagar, Hyderabad, 500059</p>
+          <p><strong>📞 Phone:</strong> <a href="tel:+918121131870">+91-8121131870</a>, <a href="tel:+919397046590">+91-9397046590</a></p>
+          <p><strong>📧 Email:</strong> <a href="mailto:tgoxygengas@gmail.com">tgoxygengas@gmail.com</a></p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+918121131870"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map -->
+  <section class="section pt-0">
+    <div class="container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3808.2870169418065!2d78.5081111!3d17.349916699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIwJzU5LjciTiA3OMKwMzAnMjkuMiJF!5e0!3m2!1sen!2sin!4v1744439582470!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/+918121131870" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <p>&copy; 2025 TG Oxygen and Industrial Gases. All rights reserved.</p>
+      <p>📍 Santosh Nagar, Hyderabad</p>
+      <p>📞 +91-8121131870 | 📧 tgoxygengas@gmail.com</p>
+    </div>
+  </footer>
+
+  <!-- Logo Modal -->
+  <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img src="logo.png" alt="TG Logo" class="modal-img mx-auto d-block rounded shadow">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.getElementById('site-footer').classList.toggle('dark');
+    }
+
+    function showLogoModal() {
+      const modal = new bootstrap.Modal(document.getElementById('logoModal'));
+      modal.show();
+    }
+  </script>
+</body>
+</html>

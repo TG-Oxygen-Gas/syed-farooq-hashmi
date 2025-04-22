@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Now | TG OXYGEN</title>
+  <link rel="icon" href="T G OXYGEN.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f9fc;
+      margin: 0;
+    }
+
+    .site-header {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+    .site-header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2196f3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-header img {
+      height: 40px;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #00bcd4, #2196f3);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .form-section {
+      padding: 60px 20px;
+    }
+
+    .form-control, .form-select {
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196f3;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a78cc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #222;
+      color: #aaa;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #222;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    body.dark-mode .site-header {
+      background: #1e1e1e;
+      box-shadow: none;
+    }
+    body.dark-mode .nav a {
+      color: #ddd;
+    }
+    body.dark-mode .product-item {
+      background: #1c1c1c;
+      color: #eee;
+    }
+    body.dark-mode .hero .btn {
+      background-color: #444;
+    }
+    body.dark-mode .hero .btn:hover {
+      background-color: #666;
+    }
+    body.dark-mode footer {
+      background: #111;
+      color: #bbb;
+    }
+    body.dark-mode .dark-toggle {
+      background: #fff;
+      color: #000;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(145deg, #25D366, #128C7E);
+      color: white;
+      font-size: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .whatsapp-float .tooltip {
+      position: absolute;
+      right: 70px;
+      background: #128C7E;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.3s ease, right 0.3s ease;
+    }
+
+    .whatsapp-float:hover .tooltip {
+      opacity: 1;
+      right: 80px;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav ul {
+        flex-direction: column;
+        display: none;
+        background: white;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="TGBANNERnewcanva.png">
+        <h1><img src="T G OXYGEN-Photoroom.png" alt="TG OXYGEN LOGO"> TG OXYGEN AND INDUSTRIAL GASES</h1>
+      </a>
+      <div class="menu-toggle" onclick="document.querySelector('.nav ul').classList.toggle('active')">☰</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="HOME.html">Home</a></li>
+          <li><a href="Products & Services.html">Products & Services</a></li>
+          <li><a href="About US.html">About</a></li>
+          <li><a href="CONTACT.html">Contact</a></li>
+          <li><a href="For Booking.html">For Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Book Your Gas Cylinder Now</h1>
+  <p>Quickly order oxygen & industrial gases for rent, refill or purchase</p>
+</section>
+
+<!-- Form Section -->
+<section class="form-section container">
+  <form id="bookingForm">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Full Name" required name="name">
+      </div>
+      <div class="col-md-6">
+        <input type="tel" class="form-control" placeholder="Phone Number" required name="phone">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Email Address" required name="email">
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Location" required name="location">
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Landmark" name="landmark">
+      </div>
+      <div class="col-md-6">
+        <select class="form-select" name="purpose" required>
+          <option value="">Purpose (Medical / Industrial)</option>
+          <option>Medical</option>
+          <option>Industrial</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <select class="form-select" name="service" required>
+          <option value="">Select Service</option>
+          <option>Purchase</option>
+          <option>Rent</option>
+          <option>Refill</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label class="form-label fw-semibold">Select Cylinder Type(s)</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="Medical Oxygen">
+          <label class="form-check-label">Medical Oxygen Cylinder</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="CO2">
+          <label class="form-check-label">CO₂ Cylinder</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="Nitrogen">
+          <label class="form-check-label">Nitrogen Cylinder</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="Argon">
+          <label class="form-check-label">Argon Cylinder</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="B-Type">
+          <label class="form-check-label">B Type Cylinder</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="product" value="Other">
+          <label class="form-check-label">Other Industrial Gas</label>
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary px-5 mt-3">Submit Request</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 TG Oxygen and Industrial Gases. All rights reserved.</p>
+  <p>📍 Santosh Nagar, Hyderabad</p>
+  <p>&phone; +91-8121131870 | Email: tgoxygengas@gmail.com</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/918121131870" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="tooltip">Chat with us</span>
+</a>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="dark-toggle">🌓</button>
+
+<!-- Scripts -->
+<script>
+  document.getElementById("darkModeToggle").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Array.from(formData.entries()).reduce((acc, [key, val]) => {
+      if (acc[key]) {
+        acc[key] += `, ${val}`;
+      } else {
+        acc[key] = val;
+      }
+      return acc;
+    }, {});
+
+    const message = `*TG OXYGEN BOOKING REQUEST*\n\n` +
+      `👤 Name: ${data.name}\n📞 Phone: ${data.phone}\n✉️ Email: ${data.email}\n📍 Location: ${data.location}\n🏁 Landmark: ${data.landmark || "N/A"}\n🔍 Purpose: ${data.purpose}\n🛠️ Service: ${data.service}\n🧪 Cylinders: ${data.product}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/918121131870?text=${encodedMessage}`, '_blank');
+    alert('Your request has been processed! We will reach out to you soon.');
+    e.target.reset();
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

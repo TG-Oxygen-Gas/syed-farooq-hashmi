@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | TG OXYGEN</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- favicon -->
+  <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
+
+
+
+
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #ffffffee;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    /* Space below navbar */
+    .hero {
+      margin-top: 80px;
+      background: linear-gradient(to right, #00bcd4, #2196f3);
+      color: white;
+      padding: 80px 30px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      background-color: white;
+      color: #2196f3;
+      border-radius: 30px;
+      padding: 10px 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      background-color: #f1f1f1;
+      color: #007acc;
+    }
+
+    .icon-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    .icon-wrapper svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .icon-wrapper img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-wrapper img:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #007acc;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .services .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .services .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .services img {
+      object-fit: cover;
+      width: 100%;
+      height: 200px;
+      border-bottom: 1px solid #eee;
+    }
+
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .social-icons a {
+      color: #2196f3;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    iframe {
+      border: 0;
+      width: 100%;
+      height: 300px;
+    }
+
+    .service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-title i {
+  color: #2196f3;
+  margin-right: 8px;
+}
+
+
+  .testimonial-card {
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-card blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+  }
+
+  .client-info {
+    text-align: center;
+  }
+
+  .client-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid #2196f3;
+    margin-bottom: 15px;
+  }
+
+  .client-name {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .client-role {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  
+  nav a.navbar-brand {
+      font-weight: 700;
+      color: #007bff !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+</style>
+
+<style>
+  /* Dark Mode Toggle Button */
+.dark-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+body.dark-mode .site-header {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+body.dark-mode .nav a {
+  color: #ddd;
+}
+body.dark-mode .product-item {
+  background: #1c1c1c;
+  color: #eee;
+}
+body.dark-mode .hero .btn {
+  background-color: #444;
+}
+body.dark-mode .hero .btn:hover {
+  background-color: #666;
+}
+body.dark-mode footer {
+  background: #111;
+  color: #bbb;
+}
+body.dark-mode .dark-toggle {
+  background: #fff;
+  color: #000;
+}
+
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="HOME.html"><img src="T G OXYGEN-Photoroom.png" alt="TG OXYGEN Logo">TG OXYGEN AND INDUSTRIAL GASES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="HOME.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Products & Services.html">Products & Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="About US.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="CONTACT.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="For Booking.html">For Booking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to TG OXYGEN</h1>
+    <p>Your Trusted Medical Oxygen Partner</p>
+    <a href="#services" class="btn">Explore Services</a>
+  </section>
+
+  <!-- SVG Logo -->
+  <div class="icon-wrapper my-5">
+    <svg width="120" height="120" viewBox="0 0 24 24" fill="#00bcd4">
+      <circle cx="12" cy="12" r="10" opacity="0.4">
+        <animate attributeName="r" values="10;12;10" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.4;0.6;0.4" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+    <img src="lack-of-air.gif" alt="Oxygen Icon">
+  </div>
+
+  <!-- About -->
+  <section id="about" class="section container">
+    <h2 class="section-title">About TG OXYGEN</h2>
+    <p>✅ TG OXYGEN is committed to delivering reliable medical oxygen solutions for hospitals, homes, and healthcare providers. We prioritize safety, speed, and service.</p>
+    <p>💡 Our 24/7 support and passionate team help ensure access to medical oxygen during crucial times.</p>
+    <p>⚙️ We also supply industrial gases like CO₂, O₂, Nitrogen, and Argon—available for both rent and refill.</p>
+  </section>
+
+
+  <!-- Services -->
+<section id="services" class="section bg-light">
+  <h2 class="section-title">Our Services</h2>
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- Card 1 -->
+      <div class="col-md-4 d-flex">
+        <div class="card service-card h-100 w-100 text-center p-3 position-relative">
+          <span class="badge bg-success position-absolute top-0 start-0 m-2">100% Pure</span>
+          <img src="tg.jpg" class="card-img-top" alt="Medical Oxygen">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-lungs"></i> Medical Oxygen Cylinders</h5>
+            <p class="card-text">High-purity oxygen cylinders for hospitals, clinics, and home care.</p>
+            <a href="homeres.html" class="btn btn-primary mt-auto">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 d-flex">
+        <div class="card service-card h-100 w-100 text-center p-3 position-relative">
+          <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">FOR EMERGENCY</span>
+          <img src="247.jpg" class="card-img-top" alt="24/7 Emergency Supply">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-clock"></i> 24/7 Emergency Supply</h5>
+            <p class="card-text">Fast, round-the-clock oxygen delivery services in critical situations.</p>
+            <a href="#" class="btn btn-primary mt-auto">Contact Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 d-flex">
+        <div class="card service-card h-100 w-100 text-center p-3 position-relative">
+          <span class="badge bg-info text-dark position-absolute top-0 start-0 m-2">FAST DELIVERY</span>
+          <a href="TGBANNERnewcanva.png"><img src="on;inedelivery.png" class="card-img-top" alt="Door Delivery"></a>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-truck"></i> We Deliver At Your Door</h5>
+            <p class="card-text">Affordable rental, purchase, and refills options for personal and industrial needs.</p>
+            <a href="bookfinal.html" class="btn btn-primary mt-auto">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="testimonials" class="section container">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div id="testimonialCarousel" class="carousel slide text-center" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Testimonial 1 -->
+      <div class="carousel-item active">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="drnr.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Dr. Narsing Rao</h5>
+            <p class="client-role">Abhinay Hospital</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"TG OXYGEN delivered an oxygen cylinder at midnight when no one else could. Lifesavers!"</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="ibr.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Ibrahim Ali</h5>
+            <p class="client-role">Hyderabad</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"Highly professional service. The concentrator worked perfectly for my father’s home care."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="abr.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Abrar Khan</h5>
+            <p class="client-role">Ibrahimpatnam</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"Their team is always ready to help. 10/10 for support and speed."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="prv.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">S. Praveen</h5>
+            <p class="client-role">Malkajgiri</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"Excellent customer service! I ordered an industrial gas cylinder late at night, and it was delivered within 2 hours. Truly dependable."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="rekha.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Dr. Rekha Menon</h5>
+            <p class="client-role">Lifeline Hospital</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"TG OXYGEN has become our hospital’s go-to supplier for oxygen. Their consistency, hygiene, and responsiveness are unmatched."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="re.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Dr. Ayesha Siddiqui</h5>
+            <p class="client-role">Mehdipatnam</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"I was nervous about renting a cylinder for my grandfather. TG OXYGEN made the process easy, and the delivery was smooth and professional."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 7 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="sameer.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Mohammed Sameer</h5>
+            <p class="client-role">Malakpet</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"Affordable prices and top-notch service. Even after delivery, their team followed up to ensure everything was working fine."</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Testimonial 8 -->
+      <div class="carousel-item">
+        <div class="testimonial-card p-4 rounded shadow-lg bg-white">
+          <div class="client-info mb-3">
+            <img src="anju.jpg" alt="Client Photo" class="client-img rounded-circle">
+            <h5 class="client-name">Anjali Verma</h5>
+            <p class="client-role">LB Nagar</p>
+          </div>
+          <blockquote class="blockquote">
+            <p>"Their emergency response time saved my uncle’s life. It’s rare to find such reliability these days. Highly recommended."</p>
+          </blockquote>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+
+
+<!-- Contact -->
+<section id="contact" class="section container">
+  <h2 class="section-title">Contact Us</h2>
+  <p><strong>Phone:</strong> +91-8121131870 , +91-9397046590</p>
+  <p><strong>Email:</strong> tgoxygen@gmail.com</p>
+  <p><strong>Address:</strong> Near Srinivasa Hospital, Santosh Nagar, Hyderabad</p>
+  <div class="my-3">
+    <!-- Google Maps Embed -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3808.2870169418065!2d78.5081111!3d17.349916699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIwJzU5LjciTiA3OMKwMzAnMjkuMiJF!5e0!3m2!1sen!2sin!4v1744439582470!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="social-icons text-center mt-4">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/+918121131870"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</section>
+
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/+918121131870" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 TG Oxygen and Industrial Gases. All rights reserved.</p>
+    <p>📍 Santosh Nagar, Hyderabad</p>
+    <p>&phone;  +91-8121131870 | Email: tgoxygengas@gmail.com</p>
+  </footer>
+
+ <!-- JS -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+  <!-- Dark Mode Toggle Script -->
+<script>
+  // Create toggle button
+  const darkToggle = document.createElement('button');
+  darkToggle.className = 'dark-toggle';
+  darkToggle.textContent = '🌓';
+  document.body.appendChild(darkToggle);
+
+  // Load saved mode if exists
+  if (localStorage.getItem('tg-dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Toggle mode on click
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Save mode preference
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('tg-dark-mode', 'enabled');
+    } else {
+      localStorage.setItem('tg-dark-mode', 'disabled');
+    }
+  });
+</script>
+
+</body>
+</html>
